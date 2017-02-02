@@ -13,20 +13,30 @@ class Guess
   end
 
   def response
-      response = @guess
+    response = @guess
   end
 
   def correct?
-    response == card.answer
-    @correct += 1
+    if response == card.answer
+      true
+      @correct += 1
+    else
+      response != card.answer
+      false
+      @correct += 1
+    end
   end
 
   def feedback
-    if correct? == true
     "Correct!"
-    else
-    "Incorrect."
-    end
   end
+  #
+  # def feedback
+  #   if response == true
+  #     "Correct!"
+  #   else
+  #     "Incorrect."
+  #   end
+  # end
 
 end

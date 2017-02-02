@@ -1,17 +1,13 @@
 class Deck
 
-  attr_reader :deck
+  attr_reader :deck, :cards
 
-  def initialize(deck)
-    @deck = deck
-  end
-
-  def cards
-    cards = deck
+  def initialize(cards)
+    @cards = cards
   end
 
   def count
-    deck.length
+    cards.length
   end
 
 end
