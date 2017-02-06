@@ -1,0 +1,5 @@
+Can I do this?, Yes
+How will I do this?, One step at a time
+What to do if I get stuck?, Break down the problem into smaller pieces
+What if you are still stuck?, Ask for help
+What is your theme song for Turing?, Lose Yourself

@@ -1,42 +1,26 @@
 require './lib/card'
 require './lib/deck'
 require './lib/round'
+require 'pry'
 
 class Guess
+attr_reader :user_guess, :card, :feedback, :total_correct
 
-  attr_reader :guess, :card, :correct
-
-  def initialize(guess, card)
-    @guess = guess
+  def initialize(user_guess, card)
+    @user_guess = user_guess
     @card = card
-    @correct = 0
-  end
-
-  def response
-    response = @guess
   end
 
   def correct?
-    if response == card.answer
-      true
-      @correct += 1
-    else
-      response != card.answer
-      false
-      @correct += 1
-    end
+    user_guess == card.answer
   end
 
   def feedback
-    "Correct!"
+    if correct?
+      "Correct!"
+    else
+      "Incorrect."
+    end
   end
-  #
-  # def feedback
-  #   if response == true
-  #     "Correct!"
-  #   else
-  #     "Incorrect."
-  #   end
-  # end
 
 end

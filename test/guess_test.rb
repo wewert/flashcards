@@ -2,6 +2,8 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/card'
 require './lib/guess'
+require './lib/deck'
+require './lib/round'
 require 'pry'
 
 class GuessTest < MiniTest::Test
@@ -33,10 +35,10 @@ class GuessTest < MiniTest::Test
   def test_there_is_another_card
     card = Card.new("Which planet is closest to the sun?", "Mercury")
     guess = Guess.new("Saturn", card)
-    assert_equal card, guess.card
+    assert_instance_of Card, guess.card
     assert_equal "Saturn", guess.response
-    assert false, guess.correct?
-    #assert_equal "Incorrect.", guess.feedback
+    refute guess.correct?
+    assert_equal "Incorrect.", guess.feedback
   end
 
 end

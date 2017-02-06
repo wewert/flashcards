@@ -7,7 +7,7 @@ class CardTest < Minitest::Test
 
   def test_there_is_an_object
     card = Card.new("What is the capital of Alaska?", "Juneau")
-    assert_instance_of Card
+    assert_instance_of Card, card
   end
 
   def test_ask_a_question

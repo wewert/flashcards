@@ -1,11 +1,16 @@
-require_relative 'card'
-require_relative 'guess'
-require_relative 'deck'
-require_relative 'round'
+require './lib/card'
+require './lib/guess'
+require './lib/deck'
+require './lib/round'
+require './lib/card_generator'
 
-card = CardGenerator.new("./lib/cards.txt").card
-playing_card = Deck.new(card)
-turn = Round.new(card)
+filename = "./lib/questions.txt"
+cards = CardGenerator.new(filename).cards
+deck = Deck.new(cards)
+round = Round.new(deck)
+
+round.start
+
 
 #start game
 #puts "Welcome! You're playing with 4 cards."
